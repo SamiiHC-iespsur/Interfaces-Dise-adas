@@ -11,6 +11,6 @@ package com.mycompany.proyectotarea1;
 public class ProyectoTarea1 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        System.out.print("¡Hola! Bienvenido a mi juego.");
     }
 }

@@ -10,6 +10,8 @@ package com.mycompany.proyectotarea1;
  */
 public class PantallaPrincipal extends javax.swing.JFrame {
     
+    private int cont = 0;
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PantallaPrincipal.class.getName());
 
     /**
@@ -17,6 +19,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     public PantallaPrincipal() {
         initComponents();
+        jLabelCont.setText(cont + "");
+        setClickerImage("Galletas");
     }
 
     /**
@@ -28,21 +32,154 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabelClicker = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabelUnidad = new javax.swing.JLabel();
+        jComboBoxUnidad = new javax.swing.JComboBox<>();
+        jButtonStats = new javax.swing.JButton();
+        jButtonReset = new javax.swing.JButton();
+        jButtonMejoras = new javax.swing.JButton();
+        jLabelCont = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jLabelClicker.setIcon(new javax.swing.ImageIcon("/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/galleta.png")); // NOI18N
+        jLabelClicker.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabelClickerMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabelClickerMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabelClickerMouseExited(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabelUnidad.setText("Galletas");
+
+        jComboBoxUnidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Galletas", "Pizzas", "Tartas" }));
+        jComboBoxUnidad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxUnidadActionPerformed(evt);
+            }
+        });
+
+        jButtonStats.setText("Estadísticas");
+
+        jButtonReset.setText("Restablecer");
+
+        jButtonMejoras.setText("Mejoras");
+
+        jLabelCont.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+
+        jLabel1.setText("Tu comida favorita:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(85, 85, 85)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jComboBoxUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(jLabel1)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 785, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(17, 17, 17))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelClicker, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addComponent(jLabelCont, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabelUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jButtonReset, javax.swing.GroupLayout.DEFAULT_SIZE, 780, Short.MAX_VALUE)
+                    .addComponent(jButtonMejoras, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonStats, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabelClicker, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelCont, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(56, 56, 56)
+                        .addComponent(jButtonMejoras, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonStats, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 98, Short.MAX_VALUE)
+                        .addComponent(jLabel1)
+                        .addGap(68, 68, 68)
+                        .addComponent(jComboBoxUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    private void setClickerImage(String item) {
+        switch (item) {
+            case "Pizzas" -> jLabelClicker.setIcon(new javax.swing.ImageIcon("/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/pizza.png"));
+            case "Tartas" -> jLabelClicker.setIcon(new javax.swing.ImageIcon("/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/tarta.png"));
+            default -> jLabelClicker.setIcon(new javax.swing.ImageIcon("/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/galleta.png"));
+        }
+    }
+
+    
+    private void jLabelClickerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelClickerMouseEntered
+        jLabelClicker.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }//GEN-LAST:event_jLabelClickerMouseEntered
+
+    private void jLabelClickerMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelClickerMouseExited
+        jLabelClicker.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_jLabelClickerMouseExited
+
+    private void jComboBoxUnidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxUnidadActionPerformed
+        setClickerImage(jComboBoxUnidad.getSelectedItem().toString());
+        jLabelUnidad.setText(jComboBoxUnidad.getSelectedItem().toString());
+    }//GEN-LAST:event_jComboBoxUnidadActionPerformed
+
+    private void jLabelClickerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelClickerMouseClicked
+        cont++;
+        jLabelCont.setText(String.valueOf(cont));
+    }//GEN-LAST:event_jLabelClickerMouseClicked
+
 
     /**
      * @param args the command line arguments
@@ -70,5 +207,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonMejoras;
+    private javax.swing.JButton jButtonReset;
+    private javax.swing.JButton jButtonStats;
+    private javax.swing.JComboBox<String> jComboBoxUnidad;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelClicker;
+    private javax.swing.JLabel jLabelCont;
+    private javax.swing.JLabel jLabelUnidad;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
