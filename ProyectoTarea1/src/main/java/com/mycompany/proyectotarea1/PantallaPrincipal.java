@@ -11,6 +11,10 @@ package com.mycompany.proyectotarea1;
 public class PantallaPrincipal extends javax.swing.JFrame {
     
     private int cont = 0;
+    private int producitividad = 0;
+    private int hornos = 0;
+    private int fabricas = 0;
+    private int cps = 0;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PantallaPrincipal.class.getName());
 
@@ -19,7 +23,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      */
     public PantallaPrincipal() {
         initComponents();
-        jLabelCont.setText(cont + "");
+        jLabelCont.setText(this.getCont() + "");
         setClickerImage("Galletas");
     }
 
@@ -85,6 +89,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jButtonReset.setText("Restablecer");
 
         jButtonMejoras.setText("Mejoras");
+        jButtonMejoras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonMejorasActionPerformed(evt);
+            }
+        });
 
         jLabelCont.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
@@ -160,7 +169,14 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             default -> jLabelClicker.setIcon(new javax.swing.ImageIcon("/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/galleta.png"));
         }
     }
-
+    
+    public synchronized int getCont() {
+        return cont;
+    }
+    
+    public synchronized void setCont(int cont) {
+        this.cont = cont;
+    }
     
     private void jLabelClickerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelClickerMouseEntered
         jLabelClicker.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -179,6 +195,59 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         cont++;
         jLabelCont.setText(String.valueOf(cont));
     }//GEN-LAST:event_jLabelClickerMouseClicked
+
+    private void jButtonMejorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMejorasActionPerformed
+        PantallaMejoras mejoras = new PantallaMejoras(this);
+        mejoras.setVisible(true);
+    }//GEN-LAST:event_jButtonMejorasActionPerformed
+
+    public int getProducitividad() {
+        return producitividad;
+    }
+
+    public void setProducitividad(int producitividad) {
+        this.producitividad = producitividad;
+    }
+    
+    public void incrementarProductividad(int suma) {
+        this.producitividad += suma;
+    }
+
+    public int getHornos() {
+        return hornos;
+    }
+
+    public void setHornos(int hornos) {
+        this.hornos = hornos;
+    }
+    
+    public void incrementarHornos(int suma) {
+        this.hornos += suma;
+    }
+
+    public int getFabricas() {
+        return fabricas;
+    }
+
+    public void setFabricas(int fabricas) {
+        this.fabricas = fabricas;
+    }
+    
+    public void incrementarFabricas(int suma) {
+        this.fabricas += suma;
+    }
+
+    public int getCps() {
+        return cps;
+    }
+
+    public void setCps(int cps) {
+        this.cps = cps;
+    }
+    
+    public void incrementarCps(int suma) {
+        this.cps += suma;
+    }
 
 
     /**

@@ -11,11 +11,12 @@ package com.mycompany.proyectotarea1;
 public class PantallaMejoras extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PantallaMejoras.class.getName());
-
+    private final PantallaPrincipal principal;
     /**
      * Creates new form PantallaMejoras
      */
-    public PantallaMejoras() {
+    public PantallaMejoras(PantallaPrincipal principal) {
+        this.principal = principal;
         initComponents();
     }
 
@@ -28,21 +29,162 @@ public class PantallaMejoras extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabelProductividad = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel5 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jButtonComprarProductividad = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jButtonComprarHorno = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
+        jPanel7 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jButtonComprarFabrica = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setLayout(new java.awt.GridLayout(3, 0, 30, 10));
+
+        jLabelProductividad.setIcon(new javax.swing.ImageIcon("/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/cursor.png")); // NOI18N
+        jPanel1.add(jLabelProductividad);
+
+        jPanel2.setLayout(new java.awt.GridLayout(2, 0));
+
+        jLabel4.setText("Productividad - +1 X por clic");
+        jPanel2.add(jLabel4);
+
+        jPanel5.setLayout(new java.awt.GridLayout());
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Tienes:");
+        jPanel5.add(jLabel1);
+
+        jLabel5.setText("123");
+        jPanel5.add(jLabel5);
+
+        jPanel2.add(jPanel5);
+
+        jPanel1.add(jPanel2);
+
+        jButtonComprarProductividad.setText("Comprar (5 X)");
+        jButtonComprarProductividad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonComprarProductividadActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonComprarProductividad);
+
+        jLabel2.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("file:/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/horno.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
+        jPanel1.add(jLabel2);
+
+        jPanel3.setLayout(new java.awt.GridLayout(2, 0));
+
+        jLabel6.setText("Horno -  0.1 X por seg.");
+        jPanel3.add(jLabel6);
+
+        jPanel6.setLayout(new java.awt.GridLayout());
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Tienes:");
+        jPanel6.add(jLabel7);
+
+        jLabel9.setText("123");
+        jPanel6.add(jLabel9);
+
+        jPanel3.add(jPanel6);
+
+        jPanel1.add(jPanel3);
+
+        jButtonComprarHorno.setText("Comprar (10 X)");
+        jPanel1.add(jButtonComprarHorno);
+
+        jLabel3.setIcon(new javax.swing.JLabel() {
+            public javax.swing.Icon getIcon() {
+                try {
+                    return new javax.swing.ImageIcon(
+                        new java.net.URL("file:/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/fabrica.png")
+                    );
+                } catch (java.net.MalformedURLException e) {
+                }
+                return null;
+            }
+        }.getIcon());
+        jPanel1.add(jLabel3);
+
+        jPanel4.setLayout(new java.awt.GridLayout(2, 0));
+
+        jLabel8.setText("Fábrica - 5 X por seg.");
+        jPanel4.add(jLabel8);
+
+        jPanel7.setLayout(new java.awt.GridLayout());
+
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Tienes:");
+        jPanel7.add(jLabel10);
+
+        jLabel11.setText("123");
+        jPanel7.add(jLabel11);
+
+        jPanel4.add(jPanel7);
+
+        jPanel1.add(jPanel4);
+
+        jButtonComprarFabrica.setText("Comprar (20 X)");
+        jButtonComprarFabrica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonComprarFabricaActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButtonComprarFabrica);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 642, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 902, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 452, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonComprarProductividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarProductividadActionPerformed
+        
+    }//GEN-LAST:event_jButtonComprarProductividadActionPerformed
+
+    private void jButtonComprarFabricaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarFabricaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonComprarFabricaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +212,27 @@ public class PantallaMejoras extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonComprarFabrica;
+    private javax.swing.JButton jButtonComprarHorno;
+    private javax.swing.JButton jButtonComprarProductividad;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabelProductividad;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     // End of variables declaration//GEN-END:variables
 }

@@ -164,6 +164,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Mejoras"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonMejorasActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelCont">
       <Properties>
