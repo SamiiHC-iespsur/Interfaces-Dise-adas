@@ -64,9 +64,11 @@
             <Property name="rows" type="int" value="2"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel4">
+            <Component class="javax.swing.JLabel" name="jLabelInfoProds">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Productividad - +1 X por clic"/>
+                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="&quot;Productividad - +1 &quot;+principal.getUd().toLowerCase().replace(&apos;s&apos;, &apos; &apos;)+&quot;por clic&quot;" type="code"/>
+                </Property>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel5">
@@ -82,9 +84,11 @@
                     <Property name="text" type="java.lang.String" value="Tienes:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel5">
+                <Component class="javax.swing.JLabel" name="jLabelContProds">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="123"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="String.valueOf(principal.getProducitividad())" type="code"/>
+                    </Property>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -102,7 +106,7 @@
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="1" name="file:/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/horno.png"/>
+              <Image iconType="2" name="/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/horno.png"/>
             </Property>
           </Properties>
         </Component>
@@ -113,9 +117,11 @@
             <Property name="rows" type="int" value="2"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel6">
+            <Component class="javax.swing.JLabel" name="jLabelInfoHornos">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Horno -  0.1 X por seg."/>
+                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="&quot;Horno -  0.1 &quot;+principal.getUd().toLowerCase()+&quot; por seg.&quot;" type="code"/>
+                </Property>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel6">
@@ -131,9 +137,11 @@
                     <Property name="text" type="java.lang.String" value="Tienes:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel9">
+                <Component class="javax.swing.JLabel" name="jLabelContHornos">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="123"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="String.valueOf(principal.getHornos())" type="code"/>
+                    </Property>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -144,11 +152,14 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Comprar (10 X)"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonComprarHornoActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="1" name="file:/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/fabrica.png"/>
+              <Image iconType="2" name="/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/fabrica.png"/>
             </Property>
           </Properties>
         </Component>
@@ -159,9 +170,11 @@
             <Property name="rows" type="int" value="2"/>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="jLabel8">
+            <Component class="javax.swing.JLabel" name="jLabelInfoFabricas">
               <Properties>
-                <Property name="text" type="java.lang.String" value="F&#xe1;brica - 5 X por seg."/>
+                <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                  <Connection code="&quot;F&#xe1;brica - 5 &quot;+principal.getUd().toLowerCase()+&quot; por seg.&quot;" type="code"/>
+                </Property>
               </Properties>
             </Component>
             <Container class="javax.swing.JPanel" name="jPanel7">
@@ -177,9 +190,11 @@
                     <Property name="text" type="java.lang.String" value="Tienes:"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel11">
+                <Component class="javax.swing.JLabel" name="jLabelContFabricas">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="123"/>
+                    <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="String.valueOf(principal.getFabricas())" type="code"/>
+                    </Property>
                   </Properties>
                 </Component>
               </SubComponents>

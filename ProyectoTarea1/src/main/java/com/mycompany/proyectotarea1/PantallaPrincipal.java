@@ -4,6 +4,10 @@
  */
 package com.mycompany.proyectotarea1;
 
+import javax.swing.JOptionPane;
+import javax.swing.Timer;
+import javax.swing.WindowConstants;
+
 /**
  *
  * @author alumnadotarde
@@ -15,6 +19,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     private int hornos = 0;
     private int fabricas = 0;
     private int cps = 0;
+    private final javax.swing.Timer timer;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PantallaPrincipal.class.getName());
 
@@ -25,6 +30,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         initComponents();
         jLabelCont.setText(this.getCont() + "");
         setClickerImage("Galletas");
+        timer = new Timer(1000, e -> {
+            cont += 1;
+            actualizarCont();
+        });
+        
     }
 
     /**
@@ -87,6 +97,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jButtonStats.setText("Estadísticas");
 
         jButtonReset.setText("Restablecer");
+        jButtonReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonResetActionPerformed(evt);
+            }
+        });
 
         jButtonMejoras.setText("Mejoras");
         jButtonMejoras.addActionListener(new java.awt.event.ActionListener() {
@@ -170,12 +185,35 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         }
     }
     
+    public void producir() {
+        this.cont += cps;
+        actualizarCont();
+    }
+    
+    public String getUd(){
+        return jComboBoxUnidad.getSelectedItem().toString();
+    }
+    
+    // Setters y getters de variables declaradas manualmente
     public synchronized int getCont() {
         return cont;
     }
     
     public synchronized void setCont(int cont) {
         this.cont = cont;
+    }
+    
+    public synchronized boolean comprar(int precio) {
+        if (this.cont >= precio) {
+            this.cont -= precio;
+            actualizarCont();
+            return true;
+        } else return false;
+        
+    }
+    
+    public synchronized void actualizarCont() {
+        jLabelCont.setText(String.valueOf(cont));
     }
     
     private void jLabelClickerMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelClickerMouseEntered
@@ -188,18 +226,28 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
     private void jComboBoxUnidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxUnidadActionPerformed
         setClickerImage(jComboBoxUnidad.getSelectedItem().toString());
-        jLabelUnidad.setText(jComboBoxUnidad.getSelectedItem().toString());
+        jLabelUnidad.setText(getUd());
     }//GEN-LAST:event_jComboBoxUnidadActionPerformed
 
     private void jLabelClickerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabelClickerMouseClicked
-        cont++;
-        jLabelCont.setText(String.valueOf(cont));
+        this.cont += 1 + this.producitividad;
+        actualizarCont();
     }//GEN-LAST:event_jLabelClickerMouseClicked
 
     private void jButtonMejorasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMejorasActionPerformed
         PantallaMejoras mejoras = new PantallaMejoras(this);
+        mejoras.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         mejoras.setVisible(true);
     }//GEN-LAST:event_jButtonMejorasActionPerformed
+
+    private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
+        int resultado = JOptionPane.showConfirmDialog(this, "ATENCIÓN: Se reiniciarán las mejoras y "+getUd().toLowerCase()+" adquiridas a 0."
+                + "\n¿Seguro que deseas continuar?", "Reinicio del juego", JOptionPane.YES_NO_OPTION);
+        if (resultado == JOptionPane.YES_OPTION) {
+            reset();
+            JOptionPane.showMessageDialog(this, "Y así, el mundo volvió a sus orígenes...", "Reinicio realizado", JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_jButtonResetActionPerformed
 
     public int getProducitividad() {
         return producitividad;
@@ -209,8 +257,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         this.producitividad = producitividad;
     }
     
-    public void incrementarProductividad(int suma) {
-        this.producitividad += suma;
+    public void incrementarProductividad() {
+        this.producitividad++;
     }
 
     public int getHornos() {
@@ -221,8 +269,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         this.hornos = hornos;
     }
     
-    public void incrementarHornos(int suma) {
-        this.hornos += suma;
+    public void incrementarHornos() {
+        this.hornos++;
     }
 
     public int getFabricas() {
@@ -233,8 +281,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         this.fabricas = fabricas;
     }
     
-    public void incrementarFabricas(int suma) {
-        this.fabricas += suma;
+    public void incrementarFabricas() {
+        this.fabricas++;
     }
 
     public int getCps() {
@@ -247,6 +295,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     
     public void incrementarCps(int suma) {
         this.cps += suma;
+    }
+    
+    public synchronized void reset() {
+        setCont(0);
+        setProducitividad(0);
+        setHornos(0);
+        setFabricas(0);
+        setCps(0);
+        actualizarCont();
     }
 
 
