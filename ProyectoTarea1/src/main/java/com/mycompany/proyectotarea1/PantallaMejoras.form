@@ -52,8 +52,8 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabelProductividad">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/cursor.png"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.ImageIcon(&quot;src&quot; + File.separator +&#xa;    &quot;main&quot; + File.separator +&#xa;    &quot;java&quot; + File.separator +&#xa;    &quot;com&quot; + File.separator +&#xa;    &quot;mycompany&quot; + File.separator +&#xa;    &quot;proyectotarea1&quot; + File.separator +&#xa;    &quot;imgs&quot; + File.separator +&#xa;    &quot;cursor.png&quot;)" type="code"/>
             </Property>
           </Properties>
         </Component>
@@ -66,8 +66,9 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelInfoProds">
               <Properties>
+                <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="&quot;Productividad - +1 &quot;+principal.getUd().toLowerCase().replace(&apos;s&apos;, &apos; &apos;)+&quot;por clic&quot;" type="code"/>
+                  <Connection code="&quot;Productividad ~ +1 &quot;+principal.getUd().toLowerCase().replace(&apos;s&apos;, &apos; &apos;)+&quot;por clic&quot;" type="code"/>
                 </Property>
               </Properties>
             </Component>
@@ -97,7 +98,9 @@
         </Container>
         <Component class="javax.swing.JButton" name="jButtonComprarProductividad">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Comprar (5 X)"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Comprar (5 &quot;+principal.getUd().toLowerCase()+&quot;)&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonComprarProductividadActionPerformed"/>
@@ -105,8 +108,8 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/horno.png"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.ImageIcon(&quot;src&quot; + File.separator +&#xa;    &quot;main&quot; + File.separator +&#xa;    &quot;java&quot; + File.separator +&#xa;    &quot;com&quot; + File.separator +&#xa;    &quot;mycompany&quot; + File.separator +&#xa;    &quot;proyectotarea1&quot; + File.separator +&#xa;    &quot;imgs&quot; + File.separator +&#xa;    &quot;horno.png&quot;)" type="code"/>
             </Property>
           </Properties>
         </Component>
@@ -119,8 +122,9 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelInfoHornos">
               <Properties>
+                <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="&quot;Horno -  0.1 &quot;+principal.getUd().toLowerCase()+&quot; por seg.&quot;" type="code"/>
+                  <Connection code="&quot;Horno ~ +1 &quot;+principal.getUd().toLowerCase()+&quot; por seg.&quot;" type="code"/>
                 </Property>
               </Properties>
             </Component>
@@ -150,7 +154,9 @@
         </Container>
         <Component class="javax.swing.JButton" name="jButtonComprarHorno">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Comprar (10 X)"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Comprar (10 &quot;+principal.getUd().toLowerCase()+&quot;)&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonComprarHornoActionPerformed"/>
@@ -158,8 +164,8 @@
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel3">
           <Properties>
-            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/fabrica.png"/>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="new javax.swing.ImageIcon(&quot;src&quot; + File.separator +&#xa;    &quot;main&quot; + File.separator +&#xa;    &quot;java&quot; + File.separator +&#xa;    &quot;com&quot; + File.separator +&#xa;    &quot;mycompany&quot; + File.separator +&#xa;    &quot;proyectotarea1&quot; + File.separator +&#xa;    &quot;imgs&quot; + File.separator +&#xa;    &quot;fabrica.png&quot;)" type="code"/>
             </Property>
           </Properties>
         </Component>
@@ -172,8 +178,9 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelInfoFabricas">
               <Properties>
+                <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="&quot;F&#xe1;brica - 5 &quot;+principal.getUd().toLowerCase()+&quot; por seg.&quot;" type="code"/>
+                  <Connection code="&quot;F&#xe1;brica ~ +5 &quot;+principal.getUd().toLowerCase()+&quot; por seg.&quot;" type="code"/>
                 </Property>
               </Properties>
             </Component>
@@ -203,7 +210,9 @@
         </Container>
         <Component class="javax.swing.JButton" name="jButtonComprarFabrica">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Comprar (20 X)"/>
+            <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+              <Connection code="&quot;Comprar (20 &quot;+principal.getUd().toLowerCase()+&quot;)&quot;" type="code"/>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButtonComprarFabricaActionPerformed"/>

@@ -4,6 +4,8 @@
 
 package com.mycompany.proyectotarea1;
 
+import java.io.File;
+
 /**
  *
  * @author alumnadotarde
@@ -11,7 +13,7 @@ package com.mycompany.proyectotarea1;
 public class ProyectoTarea1 {
 
     public static void main(String[] args) {
-        System.out.print("¡Hola! Bienvenido a mi juego.");
+        System.out.println("¡Hola! Bienvenidx a mi juego.");
         PantallaPrincipal clicker = new PantallaPrincipal();
         clicker.setVisible(true);
     }

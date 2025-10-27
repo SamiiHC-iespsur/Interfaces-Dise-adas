@@ -4,6 +4,8 @@
  */
 package com.mycompany.proyectotarea1;
 
+import java.io.File;
+
 /**
  *
  * @author alumnadotarde
@@ -56,111 +58,135 @@ public class PantallaMejoras extends javax.swing.JFrame {
 
         jPanel1.setLayout(new java.awt.GridLayout(3, 0, 30, 10));
 
-        jLabelProductividad.setIcon(new javax.swing.ImageIcon("/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/cursor.png")); // NOI18N
-        jPanel1.add(jLabelProductividad);
+        jLabelProductividad.setIcon(new javax.swing.ImageIcon("src" + File.separator +
+            "main" + File.separator +
+            "java" + File.separator +
+            "com" + File.separator +
+            "mycompany" + File.separator +
+            "proyectotarea1" + File.separator +
+            "imgs" + File.separator +
+            "cursor.png"));
+    jPanel1.add(jLabelProductividad);
 
-        jPanel2.setLayout(new java.awt.GridLayout(2, 0));
+    jPanel2.setLayout(new java.awt.GridLayout(2, 0));
 
-        jLabelInfoProds.setText("Productividad - +1 "+principal.getUd().toLowerCase().replace('s', ' ')+"por clic");
-        jPanel2.add(jLabelInfoProds);
+    jLabelInfoProds.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+    jLabelInfoProds.setText("Productividad ~ +1 "+principal.getUd().toLowerCase().replace('s', ' ')+"por clic");
+    jPanel2.add(jLabelInfoProds);
 
-        jPanel5.setLayout(new java.awt.GridLayout(1, 0));
+    jPanel5.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("Tienes:");
-        jPanel5.add(jLabel1);
+    jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+    jLabel1.setText("Tienes:");
+    jPanel5.add(jLabel1);
 
-        jLabelContProds.setText(String.valueOf(principal.getProducitividad()));
-        jPanel5.add(jLabelContProds);
+    jLabelContProds.setText(String.valueOf(principal.getProducitividad()));
+    jPanel5.add(jLabelContProds);
 
-        jPanel2.add(jPanel5);
+    jPanel2.add(jPanel5);
 
-        jPanel1.add(jPanel2);
+    jPanel1.add(jPanel2);
 
-        jButtonComprarProductividad.setText("Comprar (5 X)");
-        jButtonComprarProductividad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonComprarProductividadActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonComprarProductividad);
+    jButtonComprarProductividad.setText("Comprar (5 "+principal.getUd().toLowerCase()+")");
+    jButtonComprarProductividad.addActionListener(new java.awt.event.ActionListener() {
+        public void actionPerformed(java.awt.event.ActionEvent evt) {
+            jButtonComprarProductividadActionPerformed(evt);
+        }
+    });
+    jPanel1.add(jButtonComprarProductividad);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/horno.png")); // NOI18N
-        jPanel1.add(jLabel2);
+    jLabel2.setIcon(new javax.swing.ImageIcon("src" + File.separator +
+        "main" + File.separator +
+        "java" + File.separator +
+        "com" + File.separator +
+        "mycompany" + File.separator +
+        "proyectotarea1" + File.separator +
+        "imgs" + File.separator +
+        "horno.png"));
+jPanel1.add(jLabel2);
 
-        jPanel3.setLayout(new java.awt.GridLayout(2, 0));
+jPanel3.setLayout(new java.awt.GridLayout(2, 0));
 
-        jLabelInfoHornos.setText("Horno -  0.1 "+principal.getUd().toLowerCase()+" por seg.");
-        jPanel3.add(jLabelInfoHornos);
+jLabelInfoHornos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+jLabelInfoHornos.setText("Horno ~ +1 "+principal.getUd().toLowerCase()+" por seg.");
+jPanel3.add(jLabelInfoHornos);
 
-        jPanel6.setLayout(new java.awt.GridLayout(1, 0));
+jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("Tienes:");
-        jPanel6.add(jLabel7);
+jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+jLabel7.setText("Tienes:");
+jPanel6.add(jLabel7);
 
-        jLabelContHornos.setText(String.valueOf(principal.getHornos()));
-        jPanel6.add(jLabelContHornos);
+jLabelContHornos.setText(String.valueOf(principal.getHornos()));
+jPanel6.add(jLabelContHornos);
 
-        jPanel3.add(jPanel6);
+jPanel3.add(jPanel6);
 
-        jPanel1.add(jPanel3);
+jPanel1.add(jPanel3);
 
-        jButtonComprarHorno.setText("Comprar (10 X)");
-        jButtonComprarHorno.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonComprarHornoActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonComprarHorno);
+jButtonComprarHorno.setText("Comprar (10 "+principal.getUd().toLowerCase()+")");
+jButtonComprarHorno.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButtonComprarHornoActionPerformed(evt);
+    }
+    });
+    jPanel1.add(jButtonComprarHorno);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java/com/mycompany/proyectotarea1/imgs/fabrica.png")); // NOI18N
-        jPanel1.add(jLabel3);
+    jLabel3.setIcon(new javax.swing.ImageIcon("src" + File.separator +
+        "main" + File.separator +
+        "java" + File.separator +
+        "com" + File.separator +
+        "mycompany" + File.separator +
+        "proyectotarea1" + File.separator +
+        "imgs" + File.separator +
+        "fabrica.png"));
+jPanel1.add(jLabel3);
 
-        jPanel4.setLayout(new java.awt.GridLayout(2, 0));
+jPanel4.setLayout(new java.awt.GridLayout(2, 0));
 
-        jLabelInfoFabricas.setText("Fábrica - 5 "+principal.getUd().toLowerCase()+" por seg.");
-        jPanel4.add(jLabelInfoFabricas);
+jLabelInfoFabricas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+jLabelInfoFabricas.setText("Fábrica ~ +5 "+principal.getUd().toLowerCase()+" por seg.");
+jPanel4.add(jLabelInfoFabricas);
 
-        jPanel7.setLayout(new java.awt.GridLayout(1, 0));
+jPanel7.setLayout(new java.awt.GridLayout(1, 0));
 
-        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel10.setText("Tienes:");
-        jPanel7.add(jLabel10);
+jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+jLabel10.setText("Tienes:");
+jPanel7.add(jLabel10);
 
-        jLabelContFabricas.setText(String.valueOf(principal.getFabricas()));
-        jPanel7.add(jLabelContFabricas);
+jLabelContFabricas.setText(String.valueOf(principal.getFabricas()));
+jPanel7.add(jLabelContFabricas);
 
-        jPanel4.add(jPanel7);
+jPanel4.add(jPanel7);
 
-        jPanel1.add(jPanel4);
+jPanel1.add(jPanel4);
 
-        jButtonComprarFabrica.setText("Comprar (20 X)");
-        jButtonComprarFabrica.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonComprarFabricaActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButtonComprarFabrica);
+jButtonComprarFabrica.setText("Comprar (20 "+principal.getUd().toLowerCase()+")");
+jButtonComprarFabrica.addActionListener(new java.awt.event.ActionListener() {
+    public void actionPerformed(java.awt.event.ActionEvent evt) {
+        jButtonComprarFabricaActionPerformed(evt);
+    }
+    });
+    jPanel1.add(jButtonComprarFabrica);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 902, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+    javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+    getContentPane().setLayout(layout);
+    layout.setHorizontalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 902, Short.MAX_VALUE)
+            .addContainerGap())
+    );
+    layout.setVerticalGroup(
+        layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        .addGroup(layout.createSequentialGroup()
+            .addContainerGap()
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addContainerGap())
+    );
 
-        pack();
+    pack();
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -176,11 +202,11 @@ public class PantallaMejoras extends javax.swing.JFrame {
     }
     
     private void actualizarHornos() {
-        jLabelContProds.setText(String.valueOf(principal.getHornos()));
+        jLabelContHornos.setText(String.valueOf(principal.getHornos()));
     }
     
     private void actualizarFabricas() {
-        jLabelContProds.setText(String.valueOf(principal.getProducitividad()));
+        jLabelContFabricas.setText(String.valueOf(principal.getFabricas()));
     }
     
     private void jButtonComprarProductividadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonComprarProductividadActionPerformed
