@@ -30,6 +30,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
      * Creates new form PantallaPrincipal
      */
     public PantallaPrincipal() {
+        // use a striped orange background as the content pane before initializing components
+        setContentPane(new StripedOrangePanel());
         initComponents();
         cronoInicio = System.currentTimeMillis();
         jLabelCont.setText(this.getCont() + "");

@@ -18,6 +18,8 @@ public class PantallaStats extends javax.swing.JFrame {
      */
     public PantallaStats(PantallaPrincipal principal) {
         this.principal = principal;
+        // use the striped orange background as the content pane before UI is built
+        setContentPane(new StripedOrangePanel());
         initComponents();
     }
 
@@ -30,7 +32,9 @@ public class PantallaStats extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+    jPanel1 = new javax.swing.JPanel();
+    // allow striped background to show through
+    jPanel1.setOpaque(false);
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 

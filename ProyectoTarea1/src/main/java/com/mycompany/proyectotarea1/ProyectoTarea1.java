@@ -4,8 +4,6 @@
 
 package com.mycompany.proyectotarea1;
 
-import java.io.File;
-
 /**
  *
  * @author alumnadotarde

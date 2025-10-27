@@ -19,6 +19,8 @@ public class PantallaMejoras extends javax.swing.JFrame {
      */
     public PantallaMejoras(PantallaPrincipal principal) {
         this.principal = principal;
+        // use the striped orange background as the content pane before UI is built
+        setContentPane(new StripedOrangePanel());
         initComponents();
     }
     /**
@@ -31,7 +33,9 @@ public class PantallaMejoras extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+    jPanel1 = new javax.swing.JPanel();
+    // allow striped background to show through
+    jPanel1.setOpaque(false);
         jLabelProductividad = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabelInfoProds = new javax.swing.JLabel();
