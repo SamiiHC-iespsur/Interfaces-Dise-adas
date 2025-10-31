@@ -7,7 +7,6 @@ package jpanelimage;
 import java.awt.AlphaComposite;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.io.File;
 import java.io.Serializable;
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
