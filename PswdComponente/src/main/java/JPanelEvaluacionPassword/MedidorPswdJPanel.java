@@ -4,15 +4,14 @@
  */
 package JPanelEvaluacionPassword;
 
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.io.Serializable;
+// removed unused import java.util.Arrays; password is read directly from the field
 
 /**
  *
  * @author alumnadotarde
  */
-public class MedidorPswdJPanel extends javax.swing.JPanel {
+public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializable {
 
     private final MedidorPswd mp;
     private final String[] mensajeEval;
@@ -33,6 +32,28 @@ public class MedidorPswdJPanel extends javax.swing.JPanel {
             "Muy fuerte",
             "Excelente"
         };
+        // Make the progress bar use the same scale as the evaluator (0..7)
+        jProgressBarEval.setMinimum(0);
+        jProgressBarEval.setMaximum(7);
+        jProgressBarEval.setStringPainted(true);
+
+        // Update evaluation as the user types: listen to document changes
+        jPasswordFieldPswd.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+            @Override
+            public void insertUpdate(javax.swing.event.DocumentEvent e) {
+                evaluar(new String(jPasswordFieldPswd.getPassword()));
+            }
+
+            @Override
+            public void removeUpdate(javax.swing.event.DocumentEvent e) {
+                evaluar(new String(jPasswordFieldPswd.getPassword()));
+            }
+
+            @Override
+            public void changedUpdate(javax.swing.event.DocumentEvent e) {
+                evaluar(new String(jPasswordFieldPswd.getPassword()));
+            }
+        });
     }
 
     /**
@@ -50,7 +71,12 @@ public class MedidorPswdJPanel extends javax.swing.JPanel {
         jPanel2 = new javax.swing.JPanel();
         jProgressBarEval = new javax.swing.JProgressBar();
         jLabelEval = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setLayout(new java.awt.GridLayout(2, 0, 10, 10));
 
@@ -59,7 +85,6 @@ public class MedidorPswdJPanel extends javax.swing.JPanel {
         jLabel1.setText("Introduce tu contraseña para comprobar su fortaleza:");
         jPanel1.add(jLabel1);
 
-        jPasswordFieldPswd.setText("jPasswordField1");
         jPasswordFieldPswd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordFieldPswdActionPerformed(evt);
@@ -68,6 +93,8 @@ public class MedidorPswdJPanel extends javax.swing.JPanel {
         jPanel1.add(jPasswordFieldPswd);
 
         jPanel2.setLayout(new java.awt.GridLayout(2, 0, 0, 5));
+
+        jProgressBarEval.setOpaque(true);
         jPanel2.add(jProgressBarEval);
 
         jLabelEval.setText("Tu contraseña actual es inválida.");
@@ -77,20 +104,55 @@ public class MedidorPswdJPanel extends javax.swing.JPanel {
 
         add(jPanel1);
 
-        jLabel2.setText("""
-                        Requisitos:
-                         - Mínimo 5 caracteres
-                        
-                        Recomendaciones:
-                         - Incluir letras minúsculas y mayúsculas
-                         - Incluir dígitos
-                         - Incluir caracteres especiales
-                         - Cuanto más larga, mejor""");
-        add(jLabel2);
+        jLabel3.setText("Requisitos:");
+
+        jLabel4.setText("- La longitud de la contraseña debe de ser 5 como mínimo.");
+
+        jLabel5.setText("Recomendaciones:");
+
+        jLabel6.setText("- Combinar minús. mayús, nªs y caractéres especiales.");
+
+        jLabel7.setText("- Cuánto más larga sea la contraseña, mejor.");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel5))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jLabel6)
+                                        .addComponent(jLabel7))
+                                .addContainerGap(13, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)
+                                .addGap(0, 6, Short.MAX_VALUE))
+        );
+
+        add(jPanel3);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPasswordFieldPswdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldPswdActionPerformed
-        evaluar(Arrays.toString(jPasswordFieldPswd.getPassword()));
+        // Use the actual password content rather than Arrays.toString(...) which
+        // returns a bracketed, comma-separated representation of the char array.
+        evaluar(new String(jPasswordFieldPswd.getPassword()));
     }//GEN-LAST:event_jPasswordFieldPswdActionPerformed
 
     private void evaluar(String paswd) {
@@ -121,10 +183,15 @@ public class MedidorPswdJPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabelEval;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField jPasswordFieldPswd;
     private javax.swing.JProgressBar jProgressBarEval;
     // End of variables declaration//GEN-END:variables
