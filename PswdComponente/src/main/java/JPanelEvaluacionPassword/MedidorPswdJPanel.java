@@ -5,6 +5,11 @@
 package JPanelEvaluacionPassword;
 
 import java.io.Serializable;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Insets;
+import javax.swing.JComponent;
+import javax.swing.plaf.basic.BasicProgressBarUI;
 // removed unused import java.util.Arrays; password is read directly from the field
 
 /**
@@ -35,7 +40,8 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
         // Make the progress bar use the same scale as the evaluator (0..7)
         jProgressBarEval.setMinimum(0);
         jProgressBarEval.setMaximum(7);
-        jProgressBarEval.setStringPainted(true);
+        // Hide the percent text; we'll paint the bar itself with a custom UI
+        jProgressBarEval.setStringPainted(false);
 
         // Update evaluation as the user types: listen to document changes
         jPasswordFieldPswd.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
@@ -110,40 +116,40 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
 
         jLabel5.setText("Recomendaciones:");
 
-        jLabel6.setText("- Combinar minús. mayús, nªs y caractéres especiales.");
+        jLabel6.setText("- Combinar minúsculas, mayúsculas, números  y carácteres especiales.");
 
         jLabel7.setText("- Cuánto más larga sea la contraseña, mejor.");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
-                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel5))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel4)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel7))
-                                .addContainerGap(13, Short.MAX_VALUE))
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel5))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
-                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jLabel3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel5)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel6)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabel7)
-                                .addGap(0, 6, Short.MAX_VALUE))
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7)
+                .addGap(0, 21, Short.MAX_VALUE))
         );
 
         add(jPanel3);
@@ -163,22 +169,68 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
 
     private void actualizarBarraProgreso(int eval) {
         jProgressBarEval.setValue(eval);
-        jProgressBarEval.setForeground(switch (eval) {
+        // Choose a color for the bar fill based on evaluation
+        Color fill = switch (eval) {
             case 1, 2 ->
-                java.awt.Color.RED;
+                Color.RED;
             case 3, 4 ->
-                java.awt.Color.YELLOW;
+                Color.YELLOW;
             case 5, 6 ->
-                java.awt.Color.GREEN;
+                Color.GREEN;
             case 7 ->
-                java.awt.Color.BLUE;
+                Color.CYAN;
             default ->
-                java.awt.Color.GRAY;
-        });
+                Color.GRAY;
+        };
+        // Apply a simple custom UI so the bar's filled area uses the chosen color
+        jProgressBarEval.setUI(new ColorProgressBarUI(fill));
     }
 
     private void actualizarMensaje(int eval) {
-        jLabelEval.setText("Tu contraseña actual es " + mensajeEval[eval] + ".");
+        jLabelEval.setText("Tu contraseña actual es " + mensajeEval[eval].toLowerCase() + ".");
+    }
+
+    /**
+     * A tiny ProgressBarUI that paints the filled portion using a fixed color.
+     * This ensures the bar itself (not the string) changes color regardless of
+     * LAF.
+     */
+    private static class ColorProgressBarUI extends BasicProgressBarUI {
+
+        private final Color fillColor;
+
+        ColorProgressBarUI(Color fillColor) {
+            this.fillColor = fillColor;
+        }
+
+        @Override
+        protected void paintDeterminate(Graphics g, JComponent c) {
+            Insets b = progressBar.getInsets();
+            int barWidth = progressBar.getWidth() - (b.left + b.right);
+            int barHeight = progressBar.getHeight() - (b.top + b.bottom);
+
+            // Paint background
+            g.setColor(progressBar.getBackground());
+            g.fillRect(b.left, b.top, barWidth, barHeight);
+
+            // Determine filled width
+            double pc = progressBar.getPercentComplete();
+            // Clamp percent to [0,1]
+            if (Double.isNaN(pc) || pc < 0d) {
+                pc = 0d;
+            } else if (pc > 1d) {
+                pc = 1d;
+            }
+            int fillWidth = (int) Math.round(barWidth * pc);
+
+            // Paint filled portion with desired color
+            g.setColor(fillColor);
+            g.fillRect(b.left, b.top, fillWidth, barHeight);
+
+            // Optional: paint a simple border
+            g.setColor(Color.DARK_GRAY);
+            g.drawRect(b.left, b.top, barWidth - 1, barHeight - 1);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
