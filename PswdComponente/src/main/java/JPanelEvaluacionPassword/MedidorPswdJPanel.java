@@ -2,8 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
-package com.mycompany.pswdcomponente;
+package JPanelEvaluacionPassword;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -26,7 +27,7 @@ public class MedidorPswdJPanel extends javax.swing.JPanel {
             "Inválida",
             "Muy débil",
             "Débil",
-            "Media",
+            "Regular",
             "Buena",
             "Fuerte",
             "Muy fuerte",
@@ -76,16 +77,26 @@ public class MedidorPswdJPanel extends javax.swing.JPanel {
 
         add(jPanel1);
 
-        jLabel2.setText("jLabel2");
+        jLabel2.setText("""
+                        Requisitos:
+                         - Mínimo 5 caracteres
+                        
+                        Recomendaciones:
+                         - Incluir letras minúsculas y mayúsculas
+                         - Incluir dígitos
+                         - Incluir caracteres especiales
+                         - Cuanto más larga, mejor""");
         add(jLabel2);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPasswordFieldPswdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldPswdActionPerformed
-
+        evaluar(Arrays.toString(jPasswordFieldPswd.getPassword()));
     }//GEN-LAST:event_jPasswordFieldPswdActionPerformed
 
     private void evaluar(String paswd) {
         int eval = mp.medir(paswd);
+        actualizarBarraProgreso(eval);
+        actualizarMensaje(eval);
     }
 
     private void actualizarBarraProgreso(int eval) {
@@ -102,6 +113,10 @@ public class MedidorPswdJPanel extends javax.swing.JPanel {
             default ->
                 java.awt.Color.GRAY;
         });
+    }
+
+    private void actualizarMensaje(int eval) {
+        jLabelEval.setText("Tu contraseña actual es " + mensajeEval[eval] + ".");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
