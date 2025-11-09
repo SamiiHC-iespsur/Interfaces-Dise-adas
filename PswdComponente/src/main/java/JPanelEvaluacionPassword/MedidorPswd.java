@@ -36,7 +36,7 @@ public class MedidorPswd extends JPanel implements Serializable {
             }
 
             // Comprobar si la contraseña contiene caracteres especiales
-            if (pswd.matches(".*[!@#$%^&*(),.?\":{}|<>].*")) {
+            if (pswd.matches(".*[!@#$%^&*(),.?\":{}|<>-_¿¡=+].*")) {
                 eval++;
             }
 

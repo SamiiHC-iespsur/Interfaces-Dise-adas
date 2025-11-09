@@ -76,7 +76,11 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
         jPasswordFieldPswd = new javax.swing.JPasswordField();
         jPanel2 = new javax.swing.JPanel();
         jProgressBarEval = new javax.swing.JProgressBar();
+        jPanel4 = new javax.swing.JPanel();
+        jLabelTuContra = new javax.swing.JLabel();
         jLabelEval = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabelLength = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -88,9 +92,11 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
 
         jPanel1.setLayout(new java.awt.GridLayout(3, 0, 5, 10));
 
-        jLabel1.setText("Introduce tu contraseña para comprobar su fortaleza:");
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Introduce tu contraseña para comprobar su fortaleza.");
         jPanel1.add(jLabel1);
 
+        jPasswordFieldPswd.setAutoscrolls(false);
         jPasswordFieldPswd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jPasswordFieldPswdActionPerformed(evt);
@@ -103,22 +109,37 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
         jProgressBarEval.setOpaque(true);
         jPanel2.add(jProgressBarEval);
 
-        jLabelEval.setText("Tu contraseña actual es inválida.");
-        jPanel2.add(jLabelEval);
+        jPanel4.setLayout(new java.awt.GridLayout(1, 4, 4, 0));
+
+        jLabelTuContra.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabelTuContra.setText("Tu contraseña es");
+        jPanel4.add(jLabelTuContra);
+
+        jLabelEval.setText("inválida.");
+        jPanel4.add(jLabelEval);
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        jLabel8.setText("Longitud:");
+        jPanel4.add(jLabel8);
+
+        jLabelLength.setText("0");
+        jPanel4.add(jLabelLength);
+
+        jPanel2.add(jPanel4);
 
         jPanel1.add(jPanel2);
 
         add(jPanel1);
 
-        jLabel3.setText("Requisitos:");
+        jLabel3.setText(" Requisitos:");
 
-        jLabel4.setText("- La longitud de la contraseña debe de ser 5 como mínimo.");
+        jLabel4.setText(" - La longitud de la contraseña debe de ser 5 como mínimo.");
 
-        jLabel5.setText("Recomendaciones:");
+        jLabel5.setText(" Recomendaciones:");
 
-        jLabel6.setText("- Combinar minúsculas, mayúsculas, números  y carácteres especiales.");
+        jLabel6.setText(" - Combinar minúsculas, mayúsculas, números  y carácteres especiales.");
 
-        jLabel7.setText("- Cuánto más larga sea la contraseña, mejor.");
+        jLabel7.setText(" - Cuánto más larga sea la contraseña, mejor.");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -135,7 +156,7 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
                     .addComponent(jLabel4)
                     .addComponent(jLabel6)
                     .addComponent(jLabel7))
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -165,6 +186,7 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
         int eval = mp.medir(paswd);
         actualizarBarraProgreso(eval);
         actualizarMensaje(eval);
+        actualizarLongitud(paswd);
     }
 
     private void actualizarBarraProgreso(int eval) {
@@ -187,7 +209,11 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
     }
 
     private void actualizarMensaje(int eval) {
-        jLabelEval.setText("Tu contraseña actual es " + mensajeEval[eval].toLowerCase() + ".");
+        jLabelEval.setText(mensajeEval[eval].toLowerCase() + ".");
+    }
+    
+    private void actualizarLongitud(String pswd) {
+        jLabelLength.setText(pswd.length() + "");
     }
 
     /**
@@ -240,10 +266,14 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelEval;
+    private javax.swing.JLabel jLabelLength;
+    private javax.swing.JLabel jLabelTuContra;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JPasswordField jPasswordFieldPswd;
     private javax.swing.JProgressBar jProgressBarEval;
     // End of variables declaration//GEN-END:variables
