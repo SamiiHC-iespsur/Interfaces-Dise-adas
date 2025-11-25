@@ -73,8 +73,11 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jLabelUnidad.setFont(new java.awt.Font("Liberation Sans", 0, 36)); // NOI18N
         jLabelUnidad.setText("Galletas");
 
+        jComboBoxUnidad.setBackground(new java.awt.Color(255, 150, 200));
+        jComboBoxUnidad.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jComboBoxUnidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Galletas", "Pizzas", "Tartas" }));
         jComboBoxUnidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -82,6 +85,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jButtonStats.setBackground(new java.awt.Color(255, 150, 200));
+        jButtonStats.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButtonStats.setText("Estadísticas");
         jButtonStats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,6 +94,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jButtonReset.setBackground(new java.awt.Color(255, 150, 200));
+        jButtonReset.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jButtonReset.setText("Restablecer");
         jButtonReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +103,8 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jButtonMejoras.setBackground(new java.awt.Color(255, 150, 200));
+        jButtonMejoras.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
         jButtonMejoras.setText("Mejoras");
         jButtonMejoras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -103,6 +112,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        jLabelCont.setFont(new java.awt.Font("Liberation Sans", 0, 36)); // NOI18N
         jLabelCont.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         jLabel1.setText("Tu comida favorita:");
@@ -114,20 +124,20 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabelClicker, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(84, 84, 84)
+                        .addComponent(jComboBoxUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(189, 189, 189)
+                        .addGap(186, 186, 186)
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(84, 84, 84)
-                        .addComponent(jComboBoxUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, 341, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap()
+                        .addComponent(jLabelClicker, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabelCont, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabelUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabelUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButtonStats, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
                     .addComponent(jButtonMejoras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -137,12 +147,12 @@ public class PantallaPrincipal extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabelClicker, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addComponent(jLabelClicker, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jComboBoxUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(33, 33, 33)

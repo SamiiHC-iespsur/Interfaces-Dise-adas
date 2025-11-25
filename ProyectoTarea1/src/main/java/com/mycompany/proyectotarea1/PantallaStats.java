@@ -32,14 +32,15 @@ public class PantallaStats extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-    jPanel1 = new javax.swing.JPanel();
-    // allow striped background to show through
-    jPanel1.setOpaque(false);
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setOpaque(false);
+
+        jTable1.setBackground(new java.awt.Color(255, 150, 200));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {principal.getUd(), principal.getCont()},
@@ -54,6 +55,7 @@ public class PantallaStats extends javax.swing.JFrame {
                 "Estadísticas", System.getProperty("user.name")
             }
         ));
+        jTable1.setOpaque(false);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

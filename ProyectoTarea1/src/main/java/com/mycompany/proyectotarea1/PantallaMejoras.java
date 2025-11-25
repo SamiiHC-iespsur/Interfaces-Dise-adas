@@ -33,9 +33,7 @@ public class PantallaMejoras extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-    jPanel1 = new javax.swing.JPanel();
-    // allow striped background to show through
-    jPanel1.setOpaque(false);
+        jPanel1 = new javax.swing.JPanel();
         jLabelProductividad = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabelInfoProds = new javax.swing.JLabel();
@@ -60,6 +58,7 @@ public class PantallaMejoras extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setOpaque(false);
         jPanel1.setLayout(new java.awt.GridLayout(3, 0, 30, 10));
 
         jLabelProductividad.setIcon(new javax.swing.ImageIcon("src" + File.separator +
@@ -72,12 +71,14 @@ public class PantallaMejoras extends javax.swing.JFrame {
             "cursor.png"));
     jPanel1.add(jLabelProductividad);
 
+    jPanel2.setOpaque(false);
     jPanel2.setLayout(new java.awt.GridLayout(2, 0));
 
     jLabelInfoProds.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
     jLabelInfoProds.setText("Productividad ~ +1 "+principal.getUd().toLowerCase().replace('s', ' ')+"por clic");
     jPanel2.add(jLabelInfoProds);
 
+    jPanel5.setOpaque(false);
     jPanel5.setLayout(new java.awt.GridLayout(1, 0));
 
     jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -91,7 +92,9 @@ public class PantallaMejoras extends javax.swing.JFrame {
 
     jPanel1.add(jPanel2);
 
-    jButtonComprarProductividad.setText("Comprar (5 "+principal.getUd().toLowerCase()+")");
+    jButtonComprarProductividad.setBackground(new java.awt.Color(255, 150, 200));
+    jButtonComprarProductividad.setForeground(new java.awt.Color(255, 250, 100));
+    jButtonComprarProductividad.setText("Comprar<br>(5 "+principal.getUd().toLowerCase()+")");
     jButtonComprarProductividad.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             jButtonComprarProductividadActionPerformed(evt);
@@ -109,12 +112,14 @@ public class PantallaMejoras extends javax.swing.JFrame {
         "horno.png"));
 jPanel1.add(jLabel2);
 
+jPanel3.setOpaque(false);
 jPanel3.setLayout(new java.awt.GridLayout(2, 0));
 
 jLabelInfoHornos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 jLabelInfoHornos.setText("Horno ~ +1 "+principal.getUd().toLowerCase()+" por seg.");
 jPanel3.add(jLabelInfoHornos);
 
+jPanel6.setOpaque(false);
 jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
 jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -128,6 +133,7 @@ jPanel3.add(jPanel6);
 
 jPanel1.add(jPanel3);
 
+jButtonComprarHorno.setBackground(new java.awt.Color(255, 150, 200));
 jButtonComprarHorno.setText("Comprar (10 "+principal.getUd().toLowerCase()+")");
 jButtonComprarHorno.addActionListener(new java.awt.event.ActionListener() {
     public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,12 +152,14 @@ jButtonComprarHorno.addActionListener(new java.awt.event.ActionListener() {
         "fabrica.png"));
 jPanel1.add(jLabel3);
 
+jPanel4.setOpaque(false);
 jPanel4.setLayout(new java.awt.GridLayout(2, 0));
 
 jLabelInfoFabricas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
 jLabelInfoFabricas.setText("Fábrica ~ +5 "+principal.getUd().toLowerCase()+" por seg.");
 jPanel4.add(jLabelInfoFabricas);
 
+jPanel7.setOpaque(false);
 jPanel7.setLayout(new java.awt.GridLayout(1, 0));
 
 jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -165,6 +173,7 @@ jPanel4.add(jPanel7);
 
 jPanel1.add(jPanel4);
 
+jButtonComprarFabrica.setBackground(new java.awt.Color(255, 150, 200));
 jButtonComprarFabrica.setText("Comprar (20 "+principal.getUd().toLowerCase()+")");
 jButtonComprarFabrica.addActionListener(new java.awt.event.ActionListener() {
     public void actionPerformed(java.awt.event.ActionEvent evt) {

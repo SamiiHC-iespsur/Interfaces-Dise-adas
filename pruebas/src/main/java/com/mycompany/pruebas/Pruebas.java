@@ -11,6 +11,7 @@ package com.mycompany.pruebas;
 public class Pruebas {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        JFramePrueba pantallaPrueba = new JFramePrueba();
+        pantallaPrueba.setVisible(true);
     }
 }
