@@ -72,9 +72,12 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelInfoProds">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Liberation Sans" size="18" style="0"/>
+                </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="&quot;Productividad ~ +1 &quot;+principal.getUd().toLowerCase().replace(&apos;s&apos;, &apos; &apos;)+&quot;por clic&quot;" type="code"/>
+                  <Connection code="&quot;Productividad (+1 &quot;+principal.getUd().toLowerCase().replace(&apos;s&apos;, &apos; &apos;)+&quot;por clic)&quot;" type="code"/>
                 </Property>
               </Properties>
             </Component>
@@ -90,12 +93,18 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Liberation Sans" size="18" style="0"/>
+                    </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Tienes:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelContProds">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Liberation Sans" size="18" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                       <Connection code="String.valueOf(principal.getProducitividad())" type="code"/>
                     </Property>
@@ -110,11 +119,14 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="c8" green="96" red="ff" type="rgb"/>
             </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="24" style="0"/>
+            </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="64" green="fa" red="ff" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;Comprar&lt;br&gt;(5 &quot;+principal.getUd().toLowerCase()+&quot;)&quot;" type="code"/>
+              <Connection code="&quot;&lt;html&gt;Comprar&lt;br&gt;(5 &quot;+principal.getUd().toLowerCase()+&quot;)&lt;/html&gt;&quot;" type="code"/>
             </Property>
           </Properties>
           <Events>
@@ -140,9 +152,12 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelInfoHornos">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Liberation Sans" size="18" style="0"/>
+                </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="&quot;Horno ~ +1 &quot;+principal.getUd().toLowerCase()+&quot; por seg.&quot;" type="code"/>
+                  <Connection code="&quot;Horno (+1 &quot;+principal.getUd().toLowerCase()+&quot; por segundo)&quot;" type="code"/>
                 </Property>
               </Properties>
             </Component>
@@ -158,12 +173,18 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel7">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Liberation Sans" size="18" style="0"/>
+                    </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Tienes:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelContHornos">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Liberation Sans" size="18" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                       <Connection code="String.valueOf(principal.getHornos())" type="code"/>
                     </Property>
@@ -178,8 +199,14 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="c8" green="96" red="ff" type="rgb"/>
             </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="24" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="64" green="fa" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;Comprar (10 &quot;+principal.getUd().toLowerCase()+&quot;)&quot;" type="code"/>
+              <Connection code="&quot;&lt;html&gt;Comprar&lt;br&gt;(10 &quot;+principal.getUd().toLowerCase()+&quot;)&lt;/html&gt;&quot;" type="code"/>
             </Property>
           </Properties>
           <Events>
@@ -205,9 +232,12 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelInfoFabricas">
               <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Liberation Sans" size="18" style="0"/>
+                </Property>
                 <Property name="horizontalAlignment" type="int" value="2"/>
                 <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                  <Connection code="&quot;F&#xe1;brica ~ +5 &quot;+principal.getUd().toLowerCase()+&quot; por seg.&quot;" type="code"/>
+                  <Connection code="&quot;F&#xe1;brica (+5 &quot;+principal.getUd().toLowerCase()+&quot; por segundo)&quot;" type="code"/>
                 </Property>
               </Properties>
             </Component>
@@ -223,12 +253,18 @@
               <SubComponents>
                 <Component class="javax.swing.JLabel" name="jLabel10">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Liberation Sans" size="18" style="0"/>
+                    </Property>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="text" type="java.lang.String" value="Tienes:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabelContFabricas">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Liberation Sans" size="18" style="0"/>
+                    </Property>
                     <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
                       <Connection code="String.valueOf(principal.getFabricas())" type="code"/>
                     </Property>
@@ -243,8 +279,14 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="c8" green="96" red="ff" type="rgb"/>
             </Property>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Liberation Sans" size="24" style="0"/>
+            </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="64" green="fa" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-              <Connection code="&quot;Comprar (20 &quot;+principal.getUd().toLowerCase()+&quot;)&quot;" type="code"/>
+              <Connection code="&quot;&lt;html&gt;Comprar&lt;br&gt;(20 &quot;+principal.getUd().toLowerCase()+&quot;)&lt;/html&gt;&quot;" type="code"/>
             </Property>
           </Properties>
           <Events>

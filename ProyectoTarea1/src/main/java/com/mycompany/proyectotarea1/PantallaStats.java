@@ -15,10 +15,10 @@ public class PantallaStats extends javax.swing.JFrame {
 
     /**
      * Creates new form PantallaStats
+     * @param principal
      */
     public PantallaStats(PantallaPrincipal principal) {
         this.principal = principal;
-        // use the striped orange background as the content pane before UI is built
         setContentPane(new StripedOrangePanel());
         initComponents();
     }
@@ -41,6 +41,8 @@ public class PantallaStats extends javax.swing.JFrame {
         jPanel1.setOpaque(false);
 
         jTable1.setBackground(new java.awt.Color(255, 150, 200));
+        jTable1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jTable1.setForeground(new java.awt.Color(255, 250, 100));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {principal.getUd(), principal.getCont()},
@@ -56,6 +58,10 @@ public class PantallaStats extends javax.swing.JFrame {
             }
         ));
         jTable1.setOpaque(false);
+        jTable1.setRowHeight(30);
+        jTable1.setSelectionBackground(new java.awt.Color(255, 250, 100));
+        jTable1.setSelectionForeground(new java.awt.Color(255, 150, 200));
+        jTable1.setShowGrid(true);
         jScrollPane1.setViewportView(jTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -64,14 +70,14 @@ public class PantallaStats extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 216, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                 .addContainerGap())
         );
 

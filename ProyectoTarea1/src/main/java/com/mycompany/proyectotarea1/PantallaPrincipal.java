@@ -50,6 +50,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButtonReset1 = new javax.swing.JButton();
         jLabelClicker = new javax.swing.JLabel();
         jLabelUnidad = new javax.swing.JLabel();
         jComboBoxUnidad = new javax.swing.JComboBox<>();
@@ -58,6 +59,17 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jButtonMejoras = new javax.swing.JButton();
         jLabelCont = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jButtonAyuda = new javax.swing.JButton();
+
+        jButtonReset1.setBackground(new java.awt.Color(255, 150, 200));
+        jButtonReset1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jButtonReset1.setForeground(new java.awt.Color(255, 250, 100));
+        jButtonReset1.setText("Restablecer");
+        jButtonReset1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonReset1ActionPerformed(evt);
+            }
+        });
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,6 +90,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jComboBoxUnidad.setBackground(new java.awt.Color(255, 150, 200));
         jComboBoxUnidad.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jComboBoxUnidad.setForeground(new java.awt.Color(255, 250, 100));
         jComboBoxUnidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Galletas", "Pizzas", "Tartas" }));
         jComboBoxUnidad.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -87,6 +100,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jButtonStats.setBackground(new java.awt.Color(255, 150, 200));
         jButtonStats.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jButtonStats.setForeground(new java.awt.Color(255, 250, 100));
         jButtonStats.setText("Estadísticas");
         jButtonStats.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -96,6 +110,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jButtonReset.setBackground(new java.awt.Color(255, 150, 200));
         jButtonReset.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jButtonReset.setForeground(new java.awt.Color(255, 250, 100));
         jButtonReset.setText("Restablecer");
         jButtonReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +120,7 @@ public class PantallaPrincipal extends javax.swing.JFrame {
 
         jButtonMejoras.setBackground(new java.awt.Color(255, 150, 200));
         jButtonMejoras.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+        jButtonMejoras.setForeground(new java.awt.Color(255, 250, 100));
         jButtonMejoras.setText("Mejoras");
         jButtonMejoras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -116,6 +132,16 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         jLabelCont.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
 
         jLabel1.setText("Tu comida favorita:");
+
+        jButtonAyuda.setBackground(new java.awt.Color(255, 150, 200));
+        jButtonAyuda.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jButtonAyuda.setForeground(new java.awt.Color(255, 250, 100));
+        jButtonAyuda.setText("Ayuda");
+        jButtonAyuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAyudaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -135,12 +161,15 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabelCont, javax.swing.GroupLayout.PREFERRED_SIZE, 483, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabelCont, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabelUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabelUnidad, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jButtonStats, javax.swing.GroupLayout.DEFAULT_SIZE, 774, Short.MAX_VALUE)
                     .addComponent(jButtonMejoras, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jButtonReset, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButtonAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -164,7 +193,9 @@ public class PantallaPrincipal extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(jButtonStats, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButtonReset, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButtonAyuda, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
 
@@ -298,6 +329,16 @@ public class PantallaPrincipal extends javax.swing.JFrame {
         estadisticas.setVisible(true);
     }//GEN-LAST:event_jButtonStatsActionPerformed
 
+    private void jButtonReset1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonReset1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonReset1ActionPerformed
+
+    private void jButtonAyudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAyudaActionPerformed
+        PantallaAyuda ayuda = new PantallaAyuda(this);
+        ayuda.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        ayuda.setVisible(true);
+    }//GEN-LAST:event_jButtonAyudaActionPerformed
+
     public int getProducitividad() {
         return producitividad;
     }
@@ -394,8 +435,10 @@ public class PantallaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonAyuda;
     private javax.swing.JButton jButtonMejoras;
     private javax.swing.JButton jButtonReset;
+    private javax.swing.JButton jButtonReset1;
     private javax.swing.JButton jButtonStats;
     private javax.swing.JComboBox<String> jComboBoxUnidad;
     private javax.swing.JLabel jLabel1;

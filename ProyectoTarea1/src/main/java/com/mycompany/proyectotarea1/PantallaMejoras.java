@@ -74,17 +74,20 @@ public class PantallaMejoras extends javax.swing.JFrame {
     jPanel2.setOpaque(false);
     jPanel2.setLayout(new java.awt.GridLayout(2, 0));
 
+    jLabelInfoProds.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
     jLabelInfoProds.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-    jLabelInfoProds.setText("Productividad ~ +1 "+principal.getUd().toLowerCase().replace('s', ' ')+"por clic");
+    jLabelInfoProds.setText("Productividad (+1 "+principal.getUd().toLowerCase().replace('s', ' ')+"por clic)");
     jPanel2.add(jLabelInfoProds);
 
     jPanel5.setOpaque(false);
     jPanel5.setLayout(new java.awt.GridLayout(1, 0));
 
+    jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
     jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
     jLabel1.setText("Tienes:");
     jPanel5.add(jLabel1);
 
+    jLabelContProds.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
     jLabelContProds.setText(String.valueOf(principal.getProducitividad()));
     jPanel5.add(jLabelContProds);
 
@@ -93,8 +96,9 @@ public class PantallaMejoras extends javax.swing.JFrame {
     jPanel1.add(jPanel2);
 
     jButtonComprarProductividad.setBackground(new java.awt.Color(255, 150, 200));
+    jButtonComprarProductividad.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
     jButtonComprarProductividad.setForeground(new java.awt.Color(255, 250, 100));
-    jButtonComprarProductividad.setText("Comprar<br>(5 "+principal.getUd().toLowerCase()+")");
+    jButtonComprarProductividad.setText("<html>Comprar<br>(5 "+principal.getUd().toLowerCase()+")</html>");
     jButtonComprarProductividad.addActionListener(new java.awt.event.ActionListener() {
         public void actionPerformed(java.awt.event.ActionEvent evt) {
             jButtonComprarProductividadActionPerformed(evt);
@@ -115,17 +119,20 @@ jPanel1.add(jLabel2);
 jPanel3.setOpaque(false);
 jPanel3.setLayout(new java.awt.GridLayout(2, 0));
 
+jLabelInfoHornos.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
 jLabelInfoHornos.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-jLabelInfoHornos.setText("Horno ~ +1 "+principal.getUd().toLowerCase()+" por seg.");
+jLabelInfoHornos.setText("Horno (+1 "+principal.getUd().toLowerCase()+" por segundo)");
 jPanel3.add(jLabelInfoHornos);
 
 jPanel6.setOpaque(false);
 jPanel6.setLayout(new java.awt.GridLayout(1, 0));
 
+jLabel7.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
 jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 jLabel7.setText("Tienes:");
 jPanel6.add(jLabel7);
 
+jLabelContHornos.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
 jLabelContHornos.setText(String.valueOf(principal.getHornos()));
 jPanel6.add(jLabelContHornos);
 
@@ -134,7 +141,9 @@ jPanel3.add(jPanel6);
 jPanel1.add(jPanel3);
 
 jButtonComprarHorno.setBackground(new java.awt.Color(255, 150, 200));
-jButtonComprarHorno.setText("Comprar (10 "+principal.getUd().toLowerCase()+")");
+jButtonComprarHorno.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+jButtonComprarHorno.setForeground(new java.awt.Color(255, 250, 100));
+jButtonComprarHorno.setText("<html>Comprar<br>(10 "+principal.getUd().toLowerCase()+")</html>");
 jButtonComprarHorno.addActionListener(new java.awt.event.ActionListener() {
     public void actionPerformed(java.awt.event.ActionEvent evt) {
         jButtonComprarHornoActionPerformed(evt);
@@ -155,17 +164,20 @@ jPanel1.add(jLabel3);
 jPanel4.setOpaque(false);
 jPanel4.setLayout(new java.awt.GridLayout(2, 0));
 
+jLabelInfoFabricas.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
 jLabelInfoFabricas.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-jLabelInfoFabricas.setText("Fábrica ~ +5 "+principal.getUd().toLowerCase()+" por seg.");
+jLabelInfoFabricas.setText("Fábrica (+5 "+principal.getUd().toLowerCase()+" por segundo)");
 jPanel4.add(jLabelInfoFabricas);
 
 jPanel7.setOpaque(false);
 jPanel7.setLayout(new java.awt.GridLayout(1, 0));
 
+jLabel10.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
 jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 jLabel10.setText("Tienes:");
 jPanel7.add(jLabel10);
 
+jLabelContFabricas.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
 jLabelContFabricas.setText(String.valueOf(principal.getFabricas()));
 jPanel7.add(jLabelContFabricas);
 
@@ -174,7 +186,9 @@ jPanel4.add(jPanel7);
 jPanel1.add(jPanel4);
 
 jButtonComprarFabrica.setBackground(new java.awt.Color(255, 150, 200));
-jButtonComprarFabrica.setText("Comprar (20 "+principal.getUd().toLowerCase()+")");
+jButtonComprarFabrica.setFont(new java.awt.Font("Liberation Sans", 0, 24)); // NOI18N
+jButtonComprarFabrica.setForeground(new java.awt.Color(255, 250, 100));
+jButtonComprarFabrica.setText("<html>Comprar<br>(20 "+principal.getUd().toLowerCase()+")</html>");
 jButtonComprarFabrica.addActionListener(new java.awt.event.ActionListener() {
     public void actionPerformed(java.awt.event.ActionEvent evt) {
         jButtonComprarFabricaActionPerformed(evt);
