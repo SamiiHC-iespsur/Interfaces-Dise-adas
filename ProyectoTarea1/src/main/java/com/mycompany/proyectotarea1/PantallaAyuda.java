@@ -35,6 +35,11 @@ public class PantallaAyuda extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel21 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
@@ -45,6 +50,11 @@ public class PantallaAyuda extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        jLabel22 = new javax.swing.JLabel();
 
         jLabel4.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel4.setText("¡Haz clic sobre la " + principal.getUd().toLowerCase().replace("s", "") + " gigante para conseguir más!");
@@ -58,11 +68,30 @@ public class PantallaAyuda extends javax.swing.JFrame {
         jLabel11.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel11.setText("Una vez hayas conseguido suficientes, podrás comprar Mejoras;");
 
+        jLabel13.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel13.setText("Al Restablecer, se reiniciará todo tu progreso. ¡Cuidado; es irreversible!");
+
+        jLabel15.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel15.setText("También puedes visualizar tus Estadísticas de jugador.");
+
+        jLabel17.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel17.setText("El desplegable en la región inferior izquierda te permitirá seleccionar");
+
+        jLabel19.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel19.setText("tu bien horneado favorito.");
+
+        jLabel21.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel21.setText("En la parte superior verás tu puntuación actual.");
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setOpaque(false);
 
         jLabel1.setFont(new java.awt.Font("Liberation Sans", 0, 36)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("¡Bienvenid@, " + System.getProperty("user.name") + "!");
+
+        jPanel2.setOpaque(false);
 
         jLabel2.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -85,7 +114,23 @@ public class PantallaAyuda extends javax.swing.JFrame {
         jLabel10.setText(" - Fábricas: Incrementarán considerablemente la producción pasiva.");
 
         jLabel12.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
-        jLabel12.setText("Una vez hayas conseguido suficientes, podrás comprar Mejoras;");
+        jLabel12.setText("Al Restablecer, se reiniciará todo tu progreso. ¡Cuidado; es irreversible!");
+
+        jLabel14.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel14.setText("También puedes visualizar tus Estadísticas de jugador.");
+
+        jLabel16.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel16.setText("El desplegable en la región inferior izquierda te permitirá seleccionar");
+
+        jLabel18.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel18.setText("tu bien horneado favorito.");
+
+        jLabel20.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel20.setText("En la parte superior verás tu puntuación actual.");
+
+        jLabel22.setFont(new java.awt.Font("Liberation Sans", 0, 18)); // NOI18N
+        jLabel22.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel22.setText("¡Disfruta del juego!");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -100,7 +145,12 @@ public class PantallaAyuda extends javax.swing.JFrame {
                     .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
                     .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
                     .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
-                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE))
+                    .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
+                    .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
+                    .addComponent(jLabel16, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
+                    .addComponent(jLabel18, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
+                    .addComponent(jLabel20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 609, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -119,7 +169,17 @@ public class PantallaAyuda extends javax.swing.JFrame {
                 .addComponent(jLabel10)
                 .addGap(12, 12, 12)
                 .addComponent(jLabel12)
-                .addGap(0, 219, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel14)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel16)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel20)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel22)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -136,9 +196,9 @@ public class PantallaAyuda extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addGap(12, 12, 12))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -191,7 +251,17 @@ public class PantallaAyuda extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
