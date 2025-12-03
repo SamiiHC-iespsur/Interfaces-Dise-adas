@@ -1,0 +1,45 @@
+-J-Duser.language=
+-J-Duser.country=
+@options
+@packages
+-classpath
+'/home/alumnadotarde/.m2/repository/com/mycompany/PswdComponente/1.0-SNAPSHOT/PswdComponente-1.0-SNAPSHOT.jar'
+-encoding
+'UTF-8'
+-protected
+--release
+22
+-sourcepath
+'/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2025. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'ProyectoTarea1 1.0-SNAPSHOT API'
+-use
+-version
+-windowtitle
+'ProyectoTarea1 1.0-SNAPSHOT API'
+com.mycompany.proyectotarea1
+/home/alumnadotarde/.m2/repository/com/mycompany/PswdComponente/1.0-SNAPSHOT/PswdComponente-1.0-SNAPSHOT.jar = 1762785240962
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/src/main/java = 1760464581697
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/index.html = 1764784174397
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/module-search-index.js = 1764784174390
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/search.html = 1764784174397
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/tag-search-index.js = 1764784174390
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/serialized-form.html = 1764784174376
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/help-doc.html = 1764784174399
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/allpackages-index.html = 1764784174390
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/type-search-index.js = 1764784174390
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/index-all.html = 1764784174396
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/package-search-index.js = 1764784174390
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/allclasses-index.html = 1764784174389
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/overview-tree.html = 1764784174384
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/element-list = 1764784174352
+/home/alumnadotarde/NetBeansProjects/ProyectoTarea1/target/reports/apidocs/member-search-index.js = 1764784174390
