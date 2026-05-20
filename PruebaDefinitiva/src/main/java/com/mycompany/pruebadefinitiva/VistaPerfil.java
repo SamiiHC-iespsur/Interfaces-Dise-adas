@@ -33,10 +33,22 @@ public class VistaPerfil extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
         jButton1.setText("Adjuntar imagen...");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -71,16 +83,43 @@ public class VistaPerfil extends javax.swing.JFrame {
 
         jPanel1.add(jPanel2);
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 535, Short.MAX_VALUE)
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 691, Short.MAX_VALUE)
-        );
+        jPanel3.setLayout(new java.awt.GridLayout(0, 2));
+
+        jLabel2.setText("Dirección de email:");
+        jPanel3.add(jLabel2);
+
+        jTextField1.setText("jTextField1");
+        jPanel3.add(jTextField1);
+
+        jLabel3.setText("Nombre:");
+        jPanel3.add(jLabel3);
+
+        jTextField2.setText("jTextField2");
+        jPanel3.add(jTextField2);
+
+        jLabel4.setText("1º Apellido:");
+        jPanel3.add(jLabel4);
+
+        jTextField3.setText("jTextField3");
+        jPanel3.add(jTextField3);
+
+        jLabel5.setText("2º Apellido:");
+        jPanel3.add(jLabel5);
+
+        jTextField4.setText("jTextField4");
+        jPanel3.add(jTextField4);
+
+        jLabel6.setText("Teléfono móvil:");
+        jPanel3.add(jLabel6);
+
+        jTextField5.setText("jTextField5");
+        jPanel3.add(jTextField5);
+
+        jLabel7.setText("jLabel7");
+        jPanel3.add(jLabel7);
+
+        jTextField6.setText("jTextField6");
+        jPanel3.add(jTextField6);
 
         jPanel1.add(jPanel3);
 
@@ -136,8 +175,20 @@ public class VistaPerfil extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }
