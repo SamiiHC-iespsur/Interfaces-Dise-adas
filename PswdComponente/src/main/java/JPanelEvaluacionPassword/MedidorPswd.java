@@ -1,16 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package JPanelEvaluacionPassword;
 
 import java.io.Serializable;
+
 import javax.swing.JPanel;
 
-/**
- *
- * @author alumnadotarde
- */
 public class MedidorPswd extends JPanel implements Serializable {
 
     // Valores posibles: 0 (inválida), 1, 2 (débil), 3, 4 (media), 5, 6 (fuerte), 7 (excelente)

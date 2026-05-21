@@ -1,17 +1,28 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 package com.mycompany.pruebadefinitiva;
 
-/**
- *
- * @author alumnado
- */
+import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+
+import com.formdev.flatlaf.FlatDarkLaf;
+
 public class PruebaDefinitiva {
 
+    static void applyLookAndFeel() {
+        try {
+            FlatDarkLaf.setup();
+        } catch (Exception ex) {
+            try {
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            } catch (Exception ignore) {
+            }
+        }
+    }
+
     public static void main(String[] args) {
-        VistaLogin vistaLogin = new VistaLogin();
-        vistaLogin.setVisible(true);
+        SwingUtilities.invokeLater(() -> {
+            applyLookAndFeel();
+            new VistaLogin().setVisible(true);
+        });
     }
 
 }

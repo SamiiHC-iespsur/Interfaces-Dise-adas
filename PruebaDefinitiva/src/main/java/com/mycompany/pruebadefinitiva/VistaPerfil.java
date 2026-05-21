@@ -1,22 +1,123 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.pruebadefinitiva;
 
-/**
- *
- * @author Samuel
- */
+import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Pattern;
+import javax.imageio.ImageIO;
+import javax.swing.AbstractAction;
+import javax.swing.ButtonGroup;
+import javax.swing.ImageIcon;
+import javax.swing.JComponent;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
+import javax.swing.filechooser.FileNameExtensionFilter;
+
 public class VistaPerfil extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VistaPerfil.class.getName());
+
+    private static final String TEXTO_FOTO_PLACEHOLDER = "¡Agrega tu foto aquí!";
+    private static final Pattern EMAIL_PATTERN = Pattern.compile("^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$");
+    private final ButtonGroup generoGroup = new ButtonGroup();
 
     /**
      * Creates new form VistaPerfil
      */
     public VistaPerfil() {
         initComponents();
+        postInit(null, null);
+    }
+
+    public VistaPerfil(String username, String email) {
+        initComponents();
+        postInit(username, email);
+    }
+
+    private void postInit(String username, String email) {
+        setTitle("Perfil de usuario");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosed(WindowEvent e) {
+                VistaLogin vistaLogin = new VistaLogin();
+                vistaLogin.setVisible(true);
+            }
+        });
+
+        jTextField1.setText(username == null ? "" : username);
+        jTextFieldEmail.setText(email == null ? "" : email);
+
+        jTextFieldNombre.setText("");
+        jTextFieldApellido1.setText("");
+        jTextFieldApellido2.setText("");
+        jTextFieldDireccion.setText("");
+        jTextFieldNumMovil.setText("");
+
+        jLabelImagenPerfil.setText(TEXTO_FOTO_PLACEHOLDER);
+
+        generoGroup.add(jRadioButtonMasc);
+        generoGroup.add(jRadioButtonFem);
+        generoGroup.add(jRadioButtonOtro);
+        generoGroup.clearSelection();
+
+        jRadioButtonMasc.addActionListener(e -> actualizarGeneroCustomEstado());
+        jRadioButtonFem.addActionListener(e -> actualizarGeneroCustomEstado());
+        jRadioButtonOtro.addActionListener(e -> actualizarGeneroCustomEstado());
+
+        jTextFieldGeneroCustom.setText("");
+        actualizarGeneroCustomEstado();
+
+        jButton1.addActionListener(this::onRestablecer);
+        jButton2.addActionListener(this::onVerificar);
+
+        jButtonAdjuntarImagen.setMnemonic(KeyEvent.VK_I);
+        jButton1.setMnemonic(KeyEvent.VK_R);
+        jButton2.setMnemonic(KeyEvent.VK_V);
+
+        javax.swing.InputMap inputMap = getRootPane().getInputMap(JComponent.WHEN_IN_FOCUSED_WINDOW);
+        javax.swing.ActionMap actionMap = getRootPane().getActionMap();
+
+        inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_I, InputEvent.CTRL_DOWN_MASK), "adjuntarImagen");
+        actionMap.put("adjuntarImagen", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButtonAdjuntarImagen.doClick();
+            }
+        });
+
+        inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_R, InputEvent.CTRL_DOWN_MASK), "restablecer");
+        actionMap.put("restablecer", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton1.doClick();
+            }
+        });
+
+        inputMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, InputEvent.CTRL_DOWN_MASK), "verificar");
+        actionMap.put("verificar", new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jButton2.doClick();
+            }
+        });
+    }
+
+    private void actualizarGeneroCustomEstado() {
+        boolean otro = jRadioButtonOtro.isSelected();
+        jTextFieldGeneroCustom.setEnabled(otro);
+        jTextFieldGeneroCustom.setEditable(otro);
+
+        if (!otro) {
+            jTextFieldGeneroCustom.setText("");
+        }
     }
 
     /**
@@ -30,150 +131,363 @@ public class VistaPerfil extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
+        jButtonAdjuntarImagen = new javax.swing.JButton();
+        jLabelImagenPerfil = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextFieldEmail = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldNombre = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
+        jTextFieldApellido1 = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        jTextFieldApellido2 = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jRadioButtonMasc = new javax.swing.JRadioButton();
+        jRadioButtonOtro = new javax.swing.JRadioButton();
+        jRadioButtonFem = new javax.swing.JRadioButton();
+        jTextFieldGeneroCustom = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jTextFieldDireccion = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextFieldNumMovil = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0, 20, 20));
 
-        jButton1.setText("Adjuntar imagen...");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonAdjuntarImagen.setText("Adjuntar imagen...");
+        jButtonAdjuntarImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonAdjuntarImagenActionPerformed(evt);
             }
         });
 
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("¡Agrega tu foto aquí!");
+        jLabelImagenPerfil.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelImagenPerfil.setText("¡Agrega tu foto aquí!");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE))
-                .addContainerGap())
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabelImagenPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jButtonAdjuntarImagen, javax.swing.GroupLayout.DEFAULT_SIZE, 513, Short.MAX_VALUE))
+                                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabelImagenPerfil, javax.swing.GroupLayout.DEFAULT_SIZE, 605, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButtonAdjuntarImagen, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap())
         );
 
         jPanel1.add(jPanel2);
 
-        jPanel3.setLayout(new java.awt.GridLayout(0, 2));
+        jPanel3.setLayout(new java.awt.GridLayout(0, 2, 20, 20));
+
+        jLabel1.setText("Nombre de usuario:");
+        jPanel3.add(jLabel1);
+
+        jTextField1.setText("Autorrellenado");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jTextField1);
 
         jLabel2.setText("Dirección de email:");
         jPanel3.add(jLabel2);
 
-        jTextField1.setText("jTextField1");
-        jPanel3.add(jTextField1);
+        jTextFieldEmail.setText("Autorrellenado");
+        jPanel3.add(jTextFieldEmail);
 
         jLabel3.setText("Nombre:");
         jPanel3.add(jLabel3);
 
-        jTextField2.setText("jTextField2");
-        jPanel3.add(jTextField2);
+        jTextFieldNombre.setText("Tu nombre...");
+        jPanel3.add(jTextFieldNombre);
 
         jLabel4.setText("1º Apellido:");
         jPanel3.add(jLabel4);
 
-        jTextField3.setText("jTextField3");
-        jPanel3.add(jTextField3);
+        jTextFieldApellido1.setText("Tu primer apellido...");
+        jTextFieldApellido1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldApellido1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jTextFieldApellido1);
 
         jLabel5.setText("2º Apellido:");
         jPanel3.add(jLabel5);
 
-        jTextField4.setText("jTextField4");
-        jPanel3.add(jTextField4);
+        jTextFieldApellido2.setText("Tu segundo apellido...");
+        jPanel3.add(jTextFieldApellido2);
+
+        jLabel7.setText("Género:");
+        jPanel3.add(jLabel7);
+
+        jPanel4.setLayout(new java.awt.GridLayout(2, 2));
+
+        jRadioButtonMasc.setText("Masculino");
+        jPanel4.add(jRadioButtonMasc);
+
+        jRadioButtonOtro.setText("Otro...");
+        jPanel4.add(jRadioButtonOtro);
+
+        jRadioButtonFem.setText("Femenino");
+        jPanel4.add(jRadioButtonFem);
+
+        jTextFieldGeneroCustom.setText("Tu género...");
+        jTextFieldGeneroCustom.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldGeneroCustomActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jTextFieldGeneroCustom);
+
+        jPanel3.add(jPanel4);
+
+        jLabel8.setText("Dirección:");
+        jPanel3.add(jLabel8);
+
+        jTextFieldDireccion.setText("Tipo de vía, nombre, número, bloque...");
+        jTextFieldDireccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextFieldDireccionActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jTextFieldDireccion);
 
         jLabel6.setText("Teléfono móvil:");
         jPanel3.add(jLabel6);
 
-        jTextField5.setText("jTextField5");
-        jPanel3.add(jTextField5);
+        jTextFieldNumMovil.setText("XXXXXXXXX");
+        jPanel3.add(jTextFieldNumMovil);
 
-        jLabel7.setText("jLabel7");
-        jPanel3.add(jLabel7);
+        jButton1.setText("Restablecer");
+        jPanel3.add(jButton1);
 
-        jTextField6.setText("jTextField6");
-        jPanel3.add(jTextField6);
+        jButton2.setText("Verificar");
+        jPanel3.add(jButton2);
 
         jPanel1.add(jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void jButtonAdjuntarImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAdjuntarImagenActionPerformed
+        JFileChooser chooser = new JFileChooser();
+        chooser.setDialogTitle("Selecciona una imagen");
+        chooser.setAcceptAllFileFilterUsed(false);
+        chooser.setFileFilter(new FileNameExtensionFilter("Imágenes (JPG, PNG)", "jpg", "jpeg", "png"));
+
+        int result = chooser.showOpenDialog(this);
+        if (result != JFileChooser.APPROVE_OPTION) {
+            return;
+        }
+
+        File file = chooser.getSelectedFile();
+        try {
+            BufferedImage img = ImageIO.read(file);
+            if (img == null) {
+                JOptionPane.showMessageDialog(
+                        this,
+                        "El archivo seleccionado no es una imagen válida.",
+                        "Imagen inválida",
+                        JOptionPane.WARNING_MESSAGE
+                );
+                return;
+            }
+            setImagenPerfil(img);
+        } catch (IOException ex) {
+            JOptionPane.showMessageDialog(
+                    this,
+                    "No se pudo cargar la imagen: " + ex.getMessage(),
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE
+            );
+        }
+    }//GEN-LAST:event_jButtonAdjuntarImagenActionPerformed
+
+    private void setImagenPerfil(BufferedImage img) {
+        int targetW = jLabelImagenPerfil.getWidth();
+        int targetH = jLabelImagenPerfil.getHeight();
+
+        Image scaled = img;
+        if (targetW > 0 && targetH > 0) {
+            double scale = Math.min((double) targetW / img.getWidth(), (double) targetH / img.getHeight());
+            int newW = Math.max(1, (int) Math.round(img.getWidth() * scale));
+            int newH = Math.max(1, (int) Math.round(img.getHeight() * scale));
+            scaled = img.getScaledInstance(newW, newH, Image.SCALE_SMOOTH);
+        }
+
+        jLabelImagenPerfil.setIcon(new ImageIcon(scaled));
+        jLabelImagenPerfil.setText(null);
+    }
+
+    private void onRestablecer(ActionEvent evt) {
+        restablecerFormulario();
+    }
+
+    private void restablecerFormulario() {
+        jTextField1.setText("");
+        jTextFieldEmail.setText("");
+        jTextFieldNombre.setText("");
+        jTextFieldApellido1.setText("");
+        jTextFieldApellido2.setText("");
+        jTextFieldDireccion.setText("");
+        jTextFieldNumMovil.setText("");
+
+        generoGroup.clearSelection();
+        jTextFieldGeneroCustom.setText("");
+        actualizarGeneroCustomEstado();
+
+        jLabelImagenPerfil.setIcon(null);
+        jLabelImagenPerfil.setText(TEXTO_FOTO_PLACEHOLDER);
+    }
+
+    private void onVerificar(ActionEvent evt) {
+        List<String> errores = validarPerfil();
+        if (errores.isEmpty()) {
+            String saludo = obtenerSaludo();
+            String nombreCompleto = String.join(" ",
+                    jTextFieldNombre.getText().trim(),
+                    jTextFieldApellido1.getText().trim(),
+                    jTextFieldApellido2.getText().trim()
+            );
+            String email = jTextFieldEmail.getText().trim();
+            JOptionPane.showMessageDialog(
+                    this,
+                    saludo + ", " + nombreCompleto + ".\nEmail: " + email,
+                    "Validación exitosa",
+                    JOptionPane.INFORMATION_MESSAGE
+            );
+            return;
+        }
+
+        JOptionPane.showMessageDialog(
+                this,
+                "Tu perfil no es válido por los siguientes motivos:\n- " + String.join("\n- ", errores),
+                "Perfil no válido",
+                JOptionPane.WARNING_MESSAGE
+        );
+    }
+
+    private List<String> validarPerfil() {
+        List<String> errores = new ArrayList<>();
+
+        String username = jTextField1.getText().trim();
+        String email = jTextFieldEmail.getText().trim();
+        String nombre = jTextFieldNombre.getText().trim();
+        String apellido1 = jTextFieldApellido1.getText().trim();
+        String apellido2 = jTextFieldApellido2.getText().trim();
+        String direccion = jTextFieldDireccion.getText().trim();
+        String movil = jTextFieldNumMovil.getText().trim();
+
+        if (username.isBlank()) {
+            errores.add("El nombre de usuario está vacío.");
+        }
+
+        if (!EMAIL_PATTERN.matcher(email).matches()) {
+            errores.add("La dirección de email no cumple el formato *@*.*.");
+        }
+
+        if (nombre.isBlank()) {
+            errores.add("El nombre está vacío.");
+        }
+        if (apellido1.isBlank()) {
+            errores.add("El 1er apellido está vacío.");
+        }
+        if (apellido2.isBlank()) {
+            errores.add("El 2do apellido está vacío.");
+        }
+        if (direccion.isBlank()) {
+            errores.add("La dirección está vacía.");
+        }
+        if (movil.isBlank()) {
+            errores.add("El número de móvil está vacío.");
+        } else if (!movil.matches("\\d{9}")) {
+            errores.add("El número de teléfono no tiene 9 cifras exactamente.");
+        }
+
+        if (!jRadioButtonMasc.isSelected() && !jRadioButtonFem.isSelected() && !jRadioButtonOtro.isSelected()) {
+            errores.add("No hay un género especificado.");
+        } else if (jRadioButtonOtro.isSelected()) {
+            String generoCustom = jTextFieldGeneroCustom.getText().trim();
+            if (generoCustom.isBlank()) {
+                errores.add("El género personalizado (Otro...) está vacío.");
+            }
+        }
+
+        return errores;
+    }
+
+    private String obtenerSaludo() {
+        if (jRadioButtonMasc.isSelected()) {
+            return "Bienvenido";
+        }
+        if (jRadioButtonFem.isSelected()) {
+            return "Bienvenida";
+        }
+        return "Bienvenidx";
+    }
+
+    private void jTextFieldDireccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldDireccionActionPerformed
+    }//GEN-LAST:event_jTextFieldDireccionActionPerformed
+
+    private void jTextFieldGeneroCustomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldGeneroCustomActionPerformed
+    }//GEN-LAST:event_jTextFieldGeneroCustomActionPerformed
+
+    private void jTextFieldApellido1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextFieldApellido1ActionPerformed
+    }//GEN-LAST:event_jTextFieldApellido1ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new VistaPerfil().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> {
+            PruebaDefinitiva.applyLookAndFeel();
+            new VistaPerfil().setVisible(true);
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButtonAdjuntarImagen;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -181,14 +495,22 @@ public class VistaPerfil extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabelImagenPerfil;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JRadioButton jRadioButtonFem;
+    private javax.swing.JRadioButton jRadioButtonMasc;
+    private javax.swing.JRadioButton jRadioButtonOtro;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
+    private javax.swing.JTextField jTextFieldApellido1;
+    private javax.swing.JTextField jTextFieldApellido2;
+    private javax.swing.JTextField jTextFieldDireccion;
+    private javax.swing.JTextField jTextFieldEmail;
+    private javax.swing.JTextField jTextFieldGeneroCustom;
+    private javax.swing.JTextField jTextFieldNombre;
+    private javax.swing.JTextField jTextFieldNumMovil;
     // End of variables declaration//GEN-END:variables
 }

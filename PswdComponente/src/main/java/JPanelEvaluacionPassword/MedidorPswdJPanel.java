@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package JPanelEvaluacionPassword;
 
 import java.io.Serializable;
@@ -10,12 +6,7 @@ import java.awt.Graphics;
 import java.awt.Insets;
 import javax.swing.JComponent;
 import javax.swing.plaf.basic.BasicProgressBarUI;
-// removed unused import java.util.Arrays; password is read directly from the field
 
-/**
- *
- * @author alumnadotarde
- */
 public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializable {
 
     private final MedidorPswd mp;
@@ -37,13 +28,9 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
             "Muy fuerte",
             "Excelente"
         };
-        // Make the progress bar use the same scale as the evaluator (0..7)
         jProgressBarEval.setMinimum(0);
         jProgressBarEval.setMaximum(7);
-        // Hide the percent text; we'll paint the bar itself with a custom UI
         jProgressBarEval.setStringPainted(false);
-
-        // Update evaluation as the user types: listen to document changes
         jPasswordFieldPswd.getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
             @Override
             public void insertUpdate(javax.swing.event.DocumentEvent e) {
@@ -144,41 +131,39 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel5))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel7))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3)
+                                        .addComponent(jLabel5))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel4)
+                                        .addComponent(jLabel6)
+                                        .addComponent(jLabel7))
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addComponent(jLabel3)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
-                .addGap(0, 21, Short.MAX_VALUE))
+                jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel7)
+                                .addGap(0, 21, Short.MAX_VALUE))
         );
 
         add(jPanel3);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPasswordFieldPswdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldPswdActionPerformed
-        // Use the actual password content rather than Arrays.toString(...) which
-        // returns a bracketed, comma-separated representation of the char array.
         evaluar(new String(jPasswordFieldPswd.getPassword()));
     }//GEN-LAST:event_jPasswordFieldPswdActionPerformed
 
@@ -191,7 +176,6 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
 
     private void actualizarBarraProgreso(int eval) {
         jProgressBarEval.setValue(eval);
-        // Choose a color for the bar fill based on evaluation
         Color fill = switch (eval) {
             case 1, 2 ->
                 Color.RED;
@@ -204,14 +188,13 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
             default ->
                 Color.GRAY;
         };
-        // Apply a simple custom UI so the bar's filled area uses the chosen color
         jProgressBarEval.setUI(new ColorProgressBarUI(fill));
     }
 
     private void actualizarMensaje(int eval) {
         jLabelEval.setText(mensajeEval[eval].toLowerCase() + ".");
     }
-    
+
     private void actualizarLongitud(String pswd) {
         jLabelLength.setText(pswd.length() + "");
     }
@@ -234,29 +217,33 @@ public class MedidorPswdJPanel extends javax.swing.JPanel implements Serializabl
             Insets b = progressBar.getInsets();
             int barWidth = progressBar.getWidth() - (b.left + b.right);
             int barHeight = progressBar.getHeight() - (b.top + b.bottom);
-
-            // Paint background
             g.setColor(progressBar.getBackground());
             g.fillRect(b.left, b.top, barWidth, barHeight);
-
-            // Determine filled width
             double pc = progressBar.getPercentComplete();
-            // Clamp percent to [0,1]
             if (Double.isNaN(pc) || pc < 0d) {
                 pc = 0d;
             } else if (pc > 1d) {
                 pc = 1d;
             }
             int fillWidth = (int) Math.round(barWidth * pc);
-
-            // Paint filled portion with desired color
             g.setColor(fillColor);
             g.fillRect(b.left, b.top, fillWidth, barHeight);
-
-            // Optional: paint a simple border
             g.setColor(Color.DARK_GRAY);
             g.drawRect(b.left, b.top, barWidth - 1, barHeight - 1);
         }
+    }
+
+    public String getPasswordText() {
+        return new String(jPasswordFieldPswd.getPassword());
+    }
+
+    public int getComplejidad() {
+        return mp.medir(getPasswordText());
+    }
+
+    public void clearPassword() {
+        jPasswordFieldPswd.setText("");
+        evaluar("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
